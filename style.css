@@ -1,0 +1,82 @@
+/* RESET */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* LAYOUT */
+body {
+    display: grid;  /* BOM USO PRA ORGANIZAR LAYOUTS,... USA LINHA E COLUNA */ 
+    grid-template-columns: 0.5fr 1fr ;        /*PROFESSOR GOSTA DE USAR FR*/
+    grid-template-rows: 1fr 5fr 1fr;
+
+    grid-template-areas:        /*AQUI DEFINO OS LUGARES DAS TAGS*/ 
+    "header header"
+    "aside main"
+    "footer footer";
+    
+    height: 100vh;   /*view de altura da visualização .. ela ultrapassa os 100%  */
+    box-sizing: border-box; /* o tamanho da caixa terá 100%, até a borda, contabilizando padding, margin, etc.. poderia ser CONTENT-BOX, mas aqui ela considera só o conteúdo.  */
+
+    gap: 3px; /* É PARECIDO COM O MARGIN... É DISTANCIA ENTRE OS FILHOS... RUIM PQ NAO FUNCIONA NO INTERNET*/
+
+    padding: 5px;
+    background-color: #edb5bd;
+}
+
+
+header {
+    background-color: rgb(166, 224, 224);
+    padding: 10px;
+    text-align: center;
+    grid-area: header;          /*PRECISA BOTAR UM NOME PARA TRABALHAR AS AREAS*/
+}
+
+main {
+    background-color: rgb(166, 224, 224);
+    text-align: center;
+    grid-area: main;
+}
+
+aside {
+    background-color: rgb(166, 224, 224);
+    padding: 10px;
+    text-align: center;
+    grid-area: aside;
+}
+
+footer {
+    background-color: rgb(166, 224, 224);
+    padding: 10px;
+    text-align: center;
+    grid-area: footer;
+}
+
+/* COMPONENTES */
+
+main {
+    display: flex;
+    flex-direction: column; /* FLEX DIRECTION TU DEFINE OU COLUMN OU ROW, PARA AS TAG FILHAS FICAREM OU EM COLUNAS OU LINHAS*/
+    background-color: #edb5bd;
+    gap: 2px;
+}
+
+.divs {
+    display: flex;  /*TRASNFORMO ELE EM FLEX, PARA PODER DEIXAR FLEX OS FILHOS DELE, OS ARTIGOS*/
+    flex-direction: row;
+    flex-grow: 1; /* ELAS VÃO CRESCER UMA EM RELAÇÃO A OUTRA*/
+    background-color: #abcff0;
+      
+    padding: 5px;
+    flex-grow: 1;
+    gap: 5px;
+}
+
+
+.artigo {
+    background-color: #a3dfd9;
+    padding: 10px;
+    flex-grow: 1;   /*AQUI AMBOS ARTIGOS VAO CRESCER AO LADO, POIS ESTÁ EM LINHA E PREENCHERÃO TUDO*/
+}
